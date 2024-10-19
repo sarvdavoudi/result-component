@@ -45,7 +45,7 @@ export default function Home() {
   ];
   return (
     <>
-      <main className="container">
+      <main className="container" role="main">
         <div className="card">
           <div className="result">
             <h3>Your Result</h3>

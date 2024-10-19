@@ -132,11 +132,10 @@ button {
   transition: transform 0.3s cubic-bezier(0, 0, 0.38, 0.9);
 }
 button:hover {
-  background: rgba(127, 7, 242, 1);
-  background: radial-gradient(
-    at center top,
-    rgba(127, 7, 242, 1),
-    rgba(29, 71, 195, 1)
+  background: linear-gradient(
+    180deg,
+    hsla(249, 96%, 69%, 0.986) 0%,
+    hsla(241, 78%, 49%, 0.966)
   );
   transform: scale(1.05);
 }

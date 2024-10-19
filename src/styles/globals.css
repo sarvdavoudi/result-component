@@ -42,14 +42,14 @@ a {
 }
 
 .result {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
   background-color: rgb(60, 60, 197);
   border-radius: 1rem;
   padding: 2rem;
   color: white;
   text-align: center;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
 }
 .result > h3 {
   opacity: 0.6;

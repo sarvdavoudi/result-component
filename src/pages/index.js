@@ -7,7 +7,7 @@ export default function Home() {
     try {
       const response = await customizedAxios.get("/summary");
       setData(response.data);
-      // console.log(data);
+      console.log(data);
     } catch (error) {
       console.log("error fetch data");
     }

@@ -1,15 +1,13 @@
 import { customizedAxios } from "@/services/axios";
-import axios from "axios";
 import { useEffect, useState } from "react";
 
 export default function Home() {
   const [data, setData] = useState([]);
-  const fetchData = async () => {
+  const FetchData = async () => {
     try {
       const response = await customizedAxios.get("/summary");
-      const data = response.data;
-      setData(data);
-      console.log(data);
+      setData(response.data);
+      // console.log(data);
     } catch (error) {
       console.log("error fetch data");
     }
@@ -35,7 +33,7 @@ export default function Home() {
     );
   };
   useEffect(() => {
-    fetchData();
+    FetchData();
   }, []);
   const textColors = ["red", "orange", "green", "blue"];
   const backgroundColors = [

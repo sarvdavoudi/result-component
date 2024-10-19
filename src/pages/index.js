@@ -1,3 +1,4 @@
+import { customizedAxios } from "@/services/axios";
 import axios from "axios";
 import { useEffect, useState } from "react";
 
@@ -5,7 +6,7 @@ export default function Home() {
   const [data, setData] = useState([]);
   const fetchData = async () => {
     try {
-      const response = await axios.get("http://localhost:3004/summary");
+      const response = await customizedAxios.get("/summary");
       const data = response.data;
       setData(data);
       console.log(data);

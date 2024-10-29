@@ -1,8 +1,16 @@
 import { customizedAxios } from "@/services/axios";
+import Head from "next/head";
 import { useEffect, useState } from "react";
 
 export default function Home() {
   const [data, setData] = useState([]);
+  const textColors = ["red", "orange", "green", "blue"];
+  const backgroundColors = [
+    "rgb(255, 246, 245)",
+    "rgb(255, 251, 242)",
+    "rgb(242, 251, 250)",
+    "rgb(243, 243, 253)",
+  ];
   const FetchData = async () => {
     try {
       const response = await customizedAxios.get("/summary");
@@ -12,6 +20,9 @@ export default function Home() {
       console.log("error fetch data");
     }
   };
+  useEffect(() => {
+    FetchData();
+  }, []);
   const SummaryItem = ({
     icon,
     category,
@@ -22,7 +33,7 @@ export default function Home() {
     return (
       <div className="summary-item" style={{ background: backgroundColor }}>
         <div className="summary-item-left">
-          <img src={icon} />
+          <img src={icon} alt="desc" />
           <div style={{ color: textColor, fontWeight: "bold" }}>{category}</div>
         </div>
         <div className="summary-item-right" style={{ display: "flex" }}>
@@ -32,18 +43,11 @@ export default function Home() {
       </div>
     );
   };
-  useEffect(() => {
-    FetchData();
-  }, []);
-  const textColors = ["red", "orange", "green", "blue"];
-  const backgroundColors = [
-    "rgb(255, 246, 245)",
-    "rgb(255, 251, 242)",
-    "rgb(242, 251, 250)",
-    "rgb(243, 243, 253)",
-  ];
   return (
     <>
+      <Head>
+        <title>result component</title>
+      </Head>
       <main className="container" role="main">
         <div className="card">
           <div className="result">
